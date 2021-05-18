@@ -1,12 +1,11 @@
-import Cards from 'components/organisms/Cards';
-import Rocket from 'components/organisms/Rocket';
 import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import MainTemplate from './templates/MainTemplate';
-import GlobalStyles from './themes/GlobalStyles';
-import { theme } from './themes/theme';
+import MainTemplate from '../templates/MainTemplate';
+import GlobalStyles from '../../themes/GlobalStyles';
+import { theme } from '../../themes/theme';
 import styled from 'styled-components';
+import DashBoard from './DashBoard';
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,8 +21,7 @@ const App = () => {
       <GlobalStyles />
       <MainTemplate>
         <Wrapper>
-          <Cards />
-          <Rocket />
+          <DashBoard />
         </Wrapper>
       </MainTemplate>
     </ThemeProvider>

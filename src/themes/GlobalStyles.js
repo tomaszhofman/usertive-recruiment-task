@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import mouse from 'assets/icons/Pointer.png';
+
 const GlobalStyles = createGlobalStyle`
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -17,6 +19,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  cursor: url(${mouse}), auto;
 }
 
 

@@ -13,7 +13,7 @@ const Cards = () => {
   return (
     <Wrapper>
       {menu.map((item) => (
-        <Card item={item} />
+        <Card key={item.name} item={item} />
       ))}
     </Wrapper>
   );

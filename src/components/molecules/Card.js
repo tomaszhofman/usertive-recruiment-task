@@ -77,11 +77,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const Card = ({ item }) => {
+const Card = ({ item, ...props }) => {
   const [isHover, setIsHover] = useState();
 
   return (
     <Wrapper
+      {...props}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       image={item.image}

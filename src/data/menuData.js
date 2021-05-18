@@ -7,17 +7,21 @@ export const menu = [
   {
     name: 'Capsules',
     image: capsules,
+    id: 'capsules',
   },
   {
     name: 'Rockets',
     image: rockets,
+    id: 'rockets',
   },
   {
     name: 'Starlink',
     image: starlink,
+    id: 'starlink',
   },
   {
     name: 'Crew',
     image: crew,
+    id: 'crew',
   },
 ];

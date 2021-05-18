@@ -9,11 +9,15 @@ const Wrapper = styled.div`
   grid-gap: 40px;
 `;
 
-const Cards = () => {
+const Cards = ({ handleOpenCardDetails }) => {
   return (
     <Wrapper>
       {menu.map((item) => (
-        <Card key={item.name} item={item} />
+        <Card
+          onClick={() => handleOpenCardDetails(item.id)}
+          key={item.name}
+          item={item}
+        />
       ))}
     </Wrapper>
   );

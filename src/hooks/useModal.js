@@ -1,4 +1,3 @@
-import Modal from 'components/organisms/Modal/Modal';
 import React, { useState } from 'react';
 
 const useModal = () => {
@@ -7,7 +6,6 @@ const useModal = () => {
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
   return {
-    Modal,
     isOpen,
     handleCloseModal,
     handleOpenModal,

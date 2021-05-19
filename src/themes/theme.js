@@ -6,7 +6,8 @@ export const theme = {
     pink: '#E34A67',
     mint: '#00C9B7',
     white: '#FFFFFF',
-    lightPink: ' #E34A67',
+    lightPurpleSecondary: ' #A094C6',
+    lightPurpleTertiary: '#D2CBE9',
   },
   gradients: {
     card: 'linear-gradient(360deg, #2B224A 0%, rgba(43, 34, 74, 0) 100%),',

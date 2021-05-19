@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 110px;
+  padding: 0 130px;
 `;
 
 const App = () => {

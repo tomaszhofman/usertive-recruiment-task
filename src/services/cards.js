@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const baseUrl = 'https://api.spacexdata.com/v4/crew';
+const baseUrl = 'https://api.spacexdata.com/v4';
 
-const getAll = async () => {
-  const res = await axios.get(baseUrl);
-  console.log(res.data);
+const getOne = async (id) => {
+  const res = await axios.get(`${baseUrl}/${id}`);
   return res.data;
 };
 
-getAll();
+export default {
+  getOne,
+};

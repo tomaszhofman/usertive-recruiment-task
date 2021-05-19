@@ -4,13 +4,14 @@ import mouse from 'assets/icons/Pointer.png';
 
 const GlobalStyles = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 
 
 
 
 *,*::after,*::before {
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -24,7 +25,8 @@ body {
 
 
 p {
-  margin: 0
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 

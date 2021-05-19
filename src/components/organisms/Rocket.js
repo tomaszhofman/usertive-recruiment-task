@@ -9,7 +9,8 @@ import smoke1 from 'assets/planet/smoke1.png';
 import smoke2 from 'assets/planet/smoke2.png';
 
 const Wrapper = styled.div`
-  margin-left: 200px;
+  margin-left: 180px;
+  margin-bottom: 50px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@ const Wrapper = styled.div`
 `;
 const PlanetWrapper = styled.div`
   padding: 24px;
-  width: 480px;
+  width: 450px;
 
   img {
     position: relative;

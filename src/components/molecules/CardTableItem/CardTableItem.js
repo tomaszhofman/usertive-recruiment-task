@@ -10,11 +10,13 @@ const StyledTableLink = styled.td`
 `;
 
 const CardTableItem = (props) => {
-  console.log(props.item.name);
+  console.log(props);
   return (
     <tr>
-      <StyledTableLink>{props.item.name}</StyledTableLink>
-      <StyledTableLink>{props.item.type}</StyledTableLink>
+      <StyledTableLink>{props?.name || 'default'}</StyledTableLink>
+      <StyledTableLink>
+        {props?.agency || props?.company || 'default'}
+      </StyledTableLink>
     </tr>
   );
 };

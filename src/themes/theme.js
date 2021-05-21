@@ -8,6 +8,7 @@ export const theme = {
     white: '#FFFFFF',
     lightPurpleSecondary: ' #A094C6',
     lightPurpleTertiary: '#D2CBE9',
+    lightPurpleBackground: '#342A56',
   },
   gradients: {
     card: 'linear-gradient(360deg, #2B224A 0%, rgba(43, 34, 74, 0) 100%),',

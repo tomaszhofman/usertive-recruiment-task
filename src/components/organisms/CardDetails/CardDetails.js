@@ -8,7 +8,7 @@ import { ReactComponent as Close } from 'assets/arrows/close.svg';
 import { icons } from 'data/iconsData';
 
 const Wrapper = styled.div`
-  padding: 20px 24px;
+  padding: 30px 24px;
 `;
 
 const WrapperHead = styled.div`
@@ -54,7 +54,7 @@ const StyledTable = styled.table`
         left: -5px;
         width: 246px;
         height: 40px;
-        background-color: ${({ theme }) => theme.colors.purple};
+        background-color: ${({ theme }) => theme.colors.lightPurpleBackground};
         color: ${({ theme }) => theme.colors.lightPurpleSecondary};
         font-weight: 600;
         border-radius: 4px;
@@ -64,6 +64,17 @@ const StyledTable = styled.table`
   }
 `;
 
+const DropShadow = styled.div`
+  position: absolute;
+
+  background-color: red;
+  width: 487px;
+  height: 52px;
+  bottom: 15px;
+
+  background: linear-gradient(180deg, rgba(43, 34, 74, 0) 0%, #2b224a 100%);
+`;
+
 const StyledIcon = styled.img`
   position: relative;
   right: -20px;
@@ -71,23 +82,23 @@ const StyledIcon = styled.img`
 
 const data = {
   crew: {
-    col1: 'crew',
-    col2: 'name',
+    col1: 'Crew',
+    col2: 'Name',
     data: [],
   },
   capsules: {
-    col1: 'crew',
-    col2: 'name',
+    col1: 'Crew',
+    col2: 'Name',
     data: [],
   },
   starlink: {
-    col1: 'spaceTrack.OBJECT_NAME',
-    col2: 'version',
+    col1: 'Name',
+    col2: 'Version',
     data: [],
   },
   rockets: {
-    col1: 'name',
-    col2: 'company',
+    col1: 'Name',
+    col2: 'Company',
     data: [],
   },
 };
@@ -117,7 +128,7 @@ const CardDetails = ({ currentCard, activeCard, handleClose }) => {
 
     console.log(active);
     console.log(activeCard);
-  }, []);
+  });
 
   if (active === undefined) {
     return <div>...Lodaing</div>;
@@ -163,6 +174,7 @@ const CardDetails = ({ currentCard, activeCard, handleClose }) => {
           })}
         </tbody>
       </StyledTable>
+      <DropShadow />
     </Wrapper>
   );
 };

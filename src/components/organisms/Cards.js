@@ -14,7 +14,7 @@ const Cards = ({ handleOpenCardDetails }) => {
     <Wrapper>
       {menu.map((item) => (
         <Card
-          onClick={() => handleOpenCardDetails(item.id)}
+          onClick={() => handleOpenCardDetails(item)}
           key={item.name}
           item={item}
         />

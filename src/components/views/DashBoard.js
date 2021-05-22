@@ -9,15 +9,15 @@ import cardServices from 'services/cards';
 import CardDetails from 'components/organisms/CardDetails/CardDetails';
 
 const DashBoard = () => {
-  const [currentCard, setCurretCard] = useState();
+  const [apiData, setCurrentApiData] = useState();
   const [activeCard, setActiveCard] = useState();
   const { isOpen, handleCloseModal, handleOpenModal } = useModal();
 
-  const handleOpenCardDetails = async (id) => {
+  const handleOpenCardDetails = async (item) => {
     try {
-      const response = await cardServices.getOne(id);
-      setCurretCard(response);
-      setActiveCard(id);
+      const response = await cardServices.getOne(item.id);
+      setCurrentApiData(response);
+      setActiveCard(item);
     } catch (error) {
       console.log(error);
     }
@@ -32,7 +32,7 @@ const DashBoard = () => {
       <Modal isOpen={isOpen} handleClose={() => handleCloseModal()}>
         <CardDetails
           handleClose={() => handleCloseModal()}
-          currentCard={currentCard}
+          apiData={apiData}
           activeCard={activeCard}
         />
       </Modal>

@@ -78,99 +78,54 @@ const DropShadow = styled.div`
 const StyledIcon = styled.img`
   position: relative;
   right: -20px;
+
+  &:hover {
+  }
 `;
 
-const data = {
-  crew: {
-    col1: 'Crew',
-    col2: 'Name',
-    data: [],
-  },
-  capsules: {
-    col1: 'Crew',
-    col2: 'Name',
-    data: [],
-  },
-  starlink: {
-    col1: 'Name',
-    col2: 'Version',
-    data: [],
-  },
-  rockets: {
-    col1: 'Name',
-    col2: 'Company',
-    data: [],
-  },
-};
+const CardDetails = ({ apiData, activeCard, handleClose }) => {
+  const [activeIcon, setActiveIcon] = useState(icons.arrows);
+  const [cardsToShow, sortCardsToShow] = useState(apiData);
 
-const CardDetails = ({ currentCard, activeCard, handleClose }) => {
-  const [activeIcon, setActiveIcon] = useState(icons['arrows']);
-  const [sort, setSort] = useState(false);
-  const [active, setActive] = useState();
-
-  useEffect(() => {
-    if (activeCard === 'crew') {
-      setActive(data.crew);
-      data.crew.data = [...currentCard];
+  function sortByArrowState() {
+    if (activeIcon === icons.arrows) {
+      setActiveIcon(icons.arrowUp);
+      sortCardsToShow(cardsToShow.sort(activeCard.sortingFunctionASC));
+    } else if (activeIcon === icons.arrowUp) {
+      setActiveIcon(icons.arrowDown);
+      sortCardsToShow(cardsToShow.sort(activeCard.sortingFunctionDESC));
+    } else if (activeIcon === icons.arrowDown) {
+      setActiveIcon(icons.arrows);
+      sortCardsToShow(apiData);
     }
-    if (activeCard === 'capsules') {
-      setActive(data.capsules);
-      data.capsules.data = [...currentCard];
-    }
-    if (activeCard === 'starlink') {
-      setActive(data.starlink);
-      data.starlink.data = [...currentCard].slice(1, 50);
-    }
-    if (activeCard === 'rockets') {
-      setActive(data.rockets);
-      data.rockets.data = [...currentCard];
-    }
-
-    console.log(active);
-    console.log(activeCard);
-  });
-
-  if (active === undefined) {
-    return <div>...Lodaing</div>;
   }
 
-  const handleCard = () => {
-    setActiveIcon(icons['arrowUp']);
-    setSort(!sort);
-    console.log(sort);
+  const handleClickOnArrow = () => {
+    sortByArrowState();
   };
-
-  const cardsToShow = sort
-    ? active.data.sort((a, b) => a.mass.kg - b.mass.kg)
-    : active.data;
-  console.log(active.sort);
-  if (active.data === undefined) {
-    return <div>...Lodaing</div>;
-  }
-
   return (
     <Wrapper>
       <WrapperHead>
-        <StyledTitle>{activeCard}</StyledTitle>
+        <StyledTitle>{activeCard.name}</StyledTitle>
         <Close onClick={handleClose} />
       </WrapperHead>
       <StyledTable>
         <thead>
           <tr>
             <th>
-              {active.col1}
+              {activeCard.col1}
               <StyledIcon
-                onClick={handleCard}
+                onClick={handleClickOnArrow}
                 src={activeIcon}
                 alt={activeIcon}
               />
             </th>
-            <th>{active.col2}</th>
+            <th>{activeCard.col2}</th>
           </tr>
         </thead>
         <tbody>
           {cardsToShow.map((card) => {
-            return <CardTableItem {...card} />;
+            return <CardTableItem card={card} activeCard={activeCard} />;
           })}
         </tbody>
       </StyledTable>

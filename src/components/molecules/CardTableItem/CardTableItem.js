@@ -9,14 +9,12 @@ const StyledTableLink = styled.td`
   line-height: 20px;
 `;
 
-const CardTableItem = (props) => {
-  console.log(props);
+const CardTableItem = ({ card, activeCard }) => {
+  console.log('SERIAL', card.serial);
   return (
     <tr>
-      <StyledTableLink>{props?.name || 'default'}</StyledTableLink>
-      <StyledTableLink>
-        {props?.agency || props?.company || 'default'}
-      </StyledTableLink>
+      <StyledTableLink>{card[activeCard.sortingProperty]}</StyledTableLink>
+      <StyledTableLink>{card[activeCard.infoProperty]}</StyledTableLink>
     </tr>
   );
 };

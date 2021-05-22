@@ -4,7 +4,7 @@
 <br>
 
 <p align="center">
-<img src=""  alt="Logo">
+
 </p>
 
 <br>
@@ -13,13 +13,10 @@
 
 </h1>
 
-<h4 align="center">usertive app</h4>
+
 
 <p align="center">
-  <a >
-    <img src=""
-         alt="Screenshot">
-  </a>
+
 </p>
 
 
@@ -45,9 +42,12 @@
 | ------------------------- | ----------------------------- | --- |
 | `npm run start`           | Open local server             |     |
 | `npm run build`           | Create optimized build        |     |
-| `npm run test`            | Run tests                     |     |
+
 
 
 ## Live 📍
 
-## License 🔱
+https://usertive-app.netlify.app
+
+
+

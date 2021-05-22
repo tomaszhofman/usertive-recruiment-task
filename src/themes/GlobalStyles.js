@@ -29,6 +29,22 @@ p {
   font-family: 'Inter', sans-serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #221A3C;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #53477D;
+    border-radius: 8px;
+  }
+
 
 `;
 

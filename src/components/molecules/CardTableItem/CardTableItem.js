@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 const StyledTableLink = styled.td`
@@ -10,7 +9,8 @@ const StyledTableLink = styled.td`
 `;
 
 const CardTableItem = ({ card, activeCard }) => {
-  console.log('SERIAL', card.serial);
+  console.log(card);
+  console.log(activeCard);
   return (
     <tr>
       <StyledTableLink>{card[activeCard.sortingProperty]}</StyledTableLink>

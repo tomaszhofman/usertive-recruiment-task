@@ -1,6 +1,6 @@
 import { StyledTitle } from 'components/atoms/Title/Title';
 import CardTableItem from 'components/molecules/CardTableItem/CardTableItem';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { ReactComponent as Close } from 'assets/arrows/close.svg';
@@ -78,8 +78,11 @@ const DropShadow = styled.div`
 const StyledIcon = styled.img`
   position: relative;
   right: -20px;
+  opacity: ${({ activeIcon }) => (activeIcon !== icons.arrows ? '1' : '0')};
+  transition: all 0.5s ease-in-out;
 
   &:hover {
+    opacity: 1;
   }
 `;
 
@@ -118,6 +121,7 @@ const CardDetails = ({ apiData, activeCard, handleClose }) => {
                 onClick={handleClickOnArrow}
                 src={activeIcon}
                 alt={activeIcon}
+                activeIcon={activeIcon}
               />
             </th>
             <th>{activeCard.col2}</th>
@@ -125,7 +129,13 @@ const CardDetails = ({ apiData, activeCard, handleClose }) => {
         </thead>
         <tbody>
           {cardsToShow.map((card) => {
-            return <CardTableItem card={card} activeCard={activeCard} />;
+            return (
+              <CardTableItem
+                key={card.name}
+                card={card}
+                activeCard={activeCard}
+              />
+            );
           })}
         </tbody>
       </StyledTable>
